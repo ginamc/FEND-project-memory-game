@@ -1,14 +1,27 @@
 // Global Variables
-
+var allCards = document.querySelectorAll('.card'); // calling all the cards
+var openCards = []; // keeping track of open cards
 
 // A list that holds all the cards
 
 // listening for a click
-var allCards = document.querySelectorAll('.card'); // calling all the cards
+allCards.forEach(function(card) {
+    // pass all cards through a function that allows for clicking and flipping
 
-allCards.forEach(function(card) { // pass all cards through a function that allows for clicking and flipping
-    card.addEventListener('click', function(e) {
+    card.addEventListener('click', function(e) { //'e' is an anonymous function name, was in reference to console.log that's no longer here
+        openCards.push(card);
         card.classList.add('open', 'show'); // flip and show card symbol on click
+
+        if (openCards.length == 2) { // limit openCards to 2 cards
+            setTimeout(function() { // set reset delay
+                openCards.forEach(function(card) {
+                    card.classList.remove('open', 'show'); //hide card
+                });
+
+                openCards = []; //resets number of 'open cards' on the board to zero
+            }, 1000);
+        }
+
     });
 });
 
