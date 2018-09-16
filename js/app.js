@@ -245,6 +245,11 @@ document.querySelector('.modal_cancel').addEventListener('click', () => {
     toggleModal();
 });
 
+// X - closing the modal window
+document.querySelector('.modal_close').addEventListener('click', () => {
+    toggleModal();
+});
+
 /* replay the game
 document.querySelector('.modal_replay').addEventListener('click', () => {
     console.log('replay');
