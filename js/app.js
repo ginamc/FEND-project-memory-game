@@ -53,8 +53,8 @@ deck.addEventListener('click', event => {
         // add 'open' card to a list of open cards
         addToggleCard(clickTarget);
         if (toggledCards.length === 2) {
-           checkForMatch(clickTarget);
-           addMove();
+            addMove();
+            checkForMatch(clickTarget);
            starScore();
         }
     }
